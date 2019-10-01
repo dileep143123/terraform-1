@@ -1,8 +1,10 @@
-# Terraform
+## Terraform
 
-## How to install Terraform in Linux x86_64 machine
+This repository contains practice examples from books on Terraform written by James Turnbull, Yevgeniy Brikman. Also this repository contains practice examples from Udemy course on Terraform.
 
-Terraform is available as a binary. It can be downloade and installed by following below steps:
+## How to install Terraform in Ubuntu 18.04 LTS x86_64 machine
+
+Terraform is available as a binary. It can be downloaded and installed by following below steps:
 
 1. `wget https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip` <br>
 Before execting above command, please check which is the atest terraform version available. We can also download other versions from the above site.
