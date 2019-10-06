@@ -3,8 +3,6 @@ This part is specifically to demonstrate multi-line comments.
 Let's start. */
 
 provider "aws" {
-  access_key = "xyz123"
-  secret_key = "abc123"
   region     = "us-east-1"
 }
 
