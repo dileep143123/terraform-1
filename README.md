@@ -12,3 +12,23 @@ Before execting above command, please check which is the atest terraform version
 3. `sudo chown root:root terraform`
 4. `mv terraform /usr/local/bin/`
 4. `terraform --version` OR `terraform version`
+
+## Configuration of AWS secret credentials.
+
+To enable terraform to communicate to AWS cloud platform, we configure AWS secret credentials. [Here is the link](https://aws.amazon.com/cli/)
+
+## .gitignore file
+
+* We have excluded .terraform directory which gets generated after `terraform init` command. This directory contains all backend plugins used by terraform to communicate to specified provider (AWS/Azure/etc). If we change any `provider` configuration, then we need to execute `terraform init` again to update `.terraform` files to connect successfully.
+* We have excluded `*.dot` file which may contain confidential information. This file is generated to view graphical images of our infra.
+* We have excluded `*.plan` file which may contain confidential information. This file is generated using `terraform plan` command to output plans before implementing changes using `terraform apply`.
+* We have excluded `terraform.tfstate` and `terraform.tfstate.backup` files to exclude state files.
+
+## Viewing terraform graphs.
+
+* To generate dot file. <br>
+`terraform graph > exapmle.dot`
+* To convert dot file to svg image. we need to get installed `graphviz` te get the `dot` binary. [Here is the guide](../documents/graphviz_installation.md). <br>
+`dot example.dot -Tsvg -o example.svg`
+* To view svg image in Eye of Gnome image viewer in Ubuntu. <br>
+`eog example.svg`

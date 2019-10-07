@@ -1,4 +1,5 @@
 **/.terraform/
 **/*.dot
+**/*.plan
 **/terraform.tfstate
 **/terraform.tfstate.backup
