@@ -15,4 +15,4 @@ $ terraform apply
 
 ## Terraform graph
 
-Here is the terraform graph of the resources in this configuration, (./base.svg)
+Here is the terraform graph of the resources in this configuration, ![](base.svg)
