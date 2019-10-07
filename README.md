@@ -28,7 +28,7 @@ To enable terraform to communicate to AWS cloud platform, we configure AWS secre
 
 * To generate dot file. <br>
 `terraform graph > exapmle.dot`
-* To convert dot file to svg image. we need to get installed `graphviz` te get the `dot` binary. [Here is the guide](https://github.com/inderpal2406/documents/graphviz_installation.md). <br>
+* To convert dot file to svg image. we need to get installed `graphviz` te get the `dot` binary. [Here is the guide](https://github.com/inderpal2406/documents/blob/master/graphviz_installation.md). <br>
 `dot example.dot -Tsvg -o example.svg`
 * To view svg image in Eye of Gnome image viewer in Ubuntu. <br>
 `eog example.svg`
