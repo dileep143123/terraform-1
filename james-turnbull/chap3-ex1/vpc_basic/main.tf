@@ -19,7 +19,7 @@ resource "aws_internet_gateway" "tfb" {
 resource "aws_route" "internet_access" {
   route_table_id          = aws_vpc.tfb.main_route_table_id
   destination_cidr_block  = "0.0.0.0/0"
-  gateway_id              = aws_internat_gateway.tfb.id
+  gateway_id              = aws_internet_gateway.tfb.id
 }
 
 resource "aws_subnet" "public" {
