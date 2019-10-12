@@ -7,10 +7,10 @@ variable "region" {
   description = "To hold the AWS region name."
 }
 
-variable "key_name" {
-  type        = string
-  description = "The ssh key pair to get ssh access to resources."
-}
+#variable "key_name" {
+#  type        = string
+#  description = "The ssh key pair to get ssh access to resources."
+#}
 
 variable "ami" {
   type        = map(string)
