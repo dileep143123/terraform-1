@@ -9,7 +9,7 @@ provider "aws" {
 # Defining AWS VPC
 
 module "vpc_basic" {
-  source        = "./vpc_basic"
+  source        = "github.com/inderpal2406/terraform_vpc_module.git?ref=v0.0.1"
   name          = "web"
   cidr          = "10.0.0.0/16"
   public_subnet  = "10.0.1.0/24"
