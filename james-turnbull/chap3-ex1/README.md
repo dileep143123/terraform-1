@@ -15,7 +15,7 @@ terraform apply
 ```
 
 ## License  
-[MIT](../../../LICENSE.md)
+[MIT](../../LICENSE.md)
 
 ## Terraform graph
 Here is the terraform graph of the resources in this configuration, ![](./web.svg)
