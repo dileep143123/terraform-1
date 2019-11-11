@@ -3,5 +3,6 @@
 **/*.plan
 **/terraform.tfstate
 **/terraform.tfstate.backup
+**/.terraform.tfstate.lock.info
 **/*.pub
 **/id_rsa
