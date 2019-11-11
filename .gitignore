@@ -4,6 +4,6 @@
 **/terraform.tfstate
 **/terraform.tfstate.backup
 **/.terraform.tfstate.lock.info
-**/terrafrom.tfvars
+**/terraform.tfvars
 **/*.pub
 **/id_rsa
