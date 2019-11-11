@@ -33,3 +33,6 @@ To enable terraform to communicate to AWS cloud platform, we configure AWS secre
 `dot example.dot -Tsvg -o example.svg`
 * To view svg image in Eye of Gnome image viewer in Ubuntu. <br>
 `eog example.svg`
+
+## AWS EC2 instance AMI reference for an Ubuntu VM
+To know AMI details for the AWS EC2 instance in a particular region, we can refer this [website](https://cloud-images.ubuntu.com/locator/ec2/).
