@@ -5,3 +5,7 @@ A simple example containing a single AWS EC2 instance is practised here. It is n
 For example we got this link via google: https://www.terraform.io/docs/providers/aws/r/instance.html
 
 We defined `terraform.tfvars` which includes API keys to contact AWS. We mentioned this file in `.gitignore` file.
+
+The graph of AWS resources is as follows,
+
+![](./example.svg)
