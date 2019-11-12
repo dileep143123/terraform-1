@@ -1,8 +1,11 @@
 ## Introduction
 This directory contains examples to practice terraform syntax. Terraform files are written in Hashicorp Configuration Language (HCL). To understand the syntax of this language, we're practising these examples.
 
-## How to declare variables?
+## Variables in Terraform
+Variables in terraform are of different types. When we declare variables in terraform, we can mention type of variable as an attribute. Even if we don't mention its type, terraform will decide its type. But it is a good practice to mention variable types.
+
 Syntax: <br>
+
 ```
 variable "name" {
   type = string
@@ -24,8 +27,15 @@ We declare a variable by using the `variable` keyword. The name of the variable 
 * `string` variables
 * `number` variables
 * `bool` variables
-* `map` variables
 * `list` variables
+* `set` variables
+* `map` variables
+* `object` variables
+* `tuple` variables
+
+Amongst above variables, `string, number, bool` are termed as simple type variables. And `list, set, map, object, tuple` are termed as complex type variables.
+
+Complex variables are so called, because they are declared as `list(type)` wherein type can be one of the simple variable types. It is our wish to mention `list(string/number/bool)`. Even if we don't mention type, terraform will calculate it on its own. But it is a good practice to mention type.
 
 ## "string" variables
 ```
@@ -51,26 +61,10 @@ variable "status" {
 }
 ```
 
-## Map variables
-```
-variable "capitals" {
-  type = map
-  default = {
-    Punjab = "Chandigarh"
-    Maharashtra = "Mumbai"
-    Haryana = "Chandigarh"
-  }
-}
-```
-
-```
-> terraform console
-> var.capitals
-> var.capitals["Punjab"]
-> "${var.capitals["Punjab"]}"
-```
-
 ## List variables
+* List variables can contain dupicate values.
+* List variables are always ordered. For example, the below list will always return [1,2,3] and never [3,2,1] or [2,1,3] or unordered values.
+
 ```
 variable "integer_list" {
   type = list
@@ -89,6 +83,54 @@ We can use functions also on list variables,
 element(var.integer_list, 0)  -> will yield the first element of the list at index 0
 element(var.integer_list, 1)
 slice(var.integer_list, 0, 2) -> will yield values stored at 0 index and next 2 values in List
+```
+
+## Set variables
+* A set is like a list.
+* A set will always have unique values. Even if we store duplicate values, itll return unique values only.
+* In a set, the order is not fixed.
+* So, a list [5,1,1,2] becomes [1,2,5] as a set. (Terraform will return set values in sorted form)
+
+## Map variables
+* Map consists of `key`and `value` pairs.
+
+```
+variable "capitals" {
+  type = map
+  default = {
+    Punjab = "Chandigarh"
+    Maharashtra = "Mumbai"
+    Haryana = "Chandigarh"
+  }
+}
+```
+
+```
+> terraform console
+> var.capitals
+> var.capitals["Punjab"]
+> "${var.capitals["Punjab"]}"
+```
+
+## Object variables
+* An object is ike a map.
+* But object can contain `key-value` pairs (i.e. each element) of different types.
+
+For example,
+```
+{
+  Name      = "John"
+  House.No  = 10
+}
+```
+
+## Tuple variables
+* A tuple is like a list.
+* But each element can be of different type.
+
+For example,
+```
+[0, "string", true]
 ```
 
 ## How to declare resources?
