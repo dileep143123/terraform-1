@@ -19,6 +19,16 @@ variable "sister_name" {
   default = "Manpreet Kaur"
 }
 
+variable "age" {
+  type    = number
+  default = 26
+}
+
+variable "status" {
+  type    = bool
+  default = true 
+}
+
 variable "capitals" {
   type = map
   default = {

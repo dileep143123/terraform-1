@@ -21,15 +21,33 @@ We declare a variable by using the `variable` keyword. The name of the variable 
 ```
 
 ## Types of variables
-* Simple variables
-* Map variables
-* List variables
+* `string` variables
+* `number` variables
+* `bool` variables
+* `map` variables
+* `list` variables
 
-## Simple variables
+## "string" variables
 ```
 variable "school" {
-  type = string
+  type    = string
   default = "St. Xavier's high School"
+}
+```
+
+## `number` variables
+```
+variable "age" {
+  type    = number
+  default = 26
+}
+```
+
+## `bool` variable
+```
+variable "status" {
+  type    = bool
+  default = true
 }
 ```
 
