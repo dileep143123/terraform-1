@@ -141,7 +141,7 @@ We declare resources with `resource` keyword, followed by `resource type`, follo
 We cannot have same name for 2 resources of same resource type! So, every resource in terraform is unique in terms of type and name combination.
 
 ## `file upload` and `remote exec`
-This can be used to provision software to EC2 instances. We can upload a config file or a script to EC2 instance and run it using `remote exec` (in case of a script). `file upload` is defined using a `provivioner`. This is shown below,
+This can be used to provision software to EC2 instances. We can upload a config file or a script to EC2 instance and run it using `remote exec` (in case of a script). `file upload` is defined using a `provisioner`. This is shown below,
 
 ```
 resource "aws_instance" "ubuntu-vm" {
@@ -176,12 +176,22 @@ The type of the connection by default is ssh. But if we want to use another type
 
 ```
 resource "aws_key_pair" "deployer" {
-  key_name  = "deployer-key"
+  key_name    = "deployer-key"
   public_key  = var.ssh_public_key    # the variable ssh_public_key is defined in terraform.tfvars file wherein it holds value of our public key like "ssh-rsa Ivdgdg...."
 }
 
 resource "aws_instance" "ubuntu-vm" {
-  ami = "ami-xxxx"
-  instance_type = "t2.micro"
-
+  ami             = "ami-xxxx"
+  instance_type   = "t2.micro"
+  provisioner "file" {
+    source        = "app.conf"
+    destination   = "/etc/myapp.conf"
+    connection {
+      type        = "ssh"
+      user        = var.instance_username
+      private_key = file(var.path_to_private_key)
+      host        = aws_instance.ubuntu-vm.public_ip    #host represents the address of the host to connect to
+    }
+  }
 }
+```
