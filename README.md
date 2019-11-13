@@ -24,6 +24,7 @@ To enable terraform to communicate to AWS cloud platform, we configure AWS secre
 * We have excluded `*.plan` file which may contain confidential information. This file is generated using `terraform plan` command to output plans before implementing changes using `terraform apply`.
 * We have excluded `terraform.tfstate` and `terraform.tfstate.backup` files to exclude state files.
 * We have excluded `*.pub` files to exclude ssh public keys.
+* We have excluded `terraform.tfvars` file to exclude secret variables.
 
 ## Viewing terraform graphs.
 
