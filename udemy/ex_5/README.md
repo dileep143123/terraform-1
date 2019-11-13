@@ -1,5 +1,5 @@
 ## Example 5
-* In this example, we'll copy ssh key to a single EC2 instances and try ssh to it.
+* In this example, we'll copy ssh key to a multiple EC2 instances and try ssh to it.
 * Simply providing public ssh key as a variable (without declaring an aws_key_pair) didn't work for me.
 * So, I declared the same and called it in aws_instance resource in the `key_name` attribute.
 * I had to manually edit the `inbound rule` for the default security group to allow ssh access to the EC2 instance.
