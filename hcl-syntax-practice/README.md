@@ -231,3 +231,25 @@ resource "aws_instance" "ubuntu-vm" {
 ```
 
 The connection is common for both provisioners. Previously, it was mentioned only for `file` provisioner. So, the script got copied but the `remote-exec` provisioner couldn't execute the script as it couldn't connect to the host. So, connection has to be defined either separately for each provisioner or at one place which is common for all provisioners (as in example above).
+
+## Outputting attributes
+* Outputting attributes can help to output valuable information or feed it to external software.
+* For example,
+```
+resource "aws_instance" "ubuntu-vm" {
+  ami           = "ami-xxxx"
+  instance_type = "t2.micro"
+  tags          = {
+    Name        = "ubuntu-vm"
+  }
+}
+
+output "ip" {
+  value         = aws_instance.ubuntu-vm.public_ip
+}
+```
+* We can output any attribute. But we need to specify below 3 parameters,
+  * resource type     : aws_instance
+  * resource name     : ubuntu-vm
+  * attribute name    : public_ip
+* The list of attributes for a partiular resource can be found from terraform website.
