@@ -253,3 +253,4 @@ output "ip" {
   * resource name     : ubuntu-vm
   * attribute name    : public_ip
 * The list of attributes for a partiular resource can be found from terraform website.
+* The `local-exec` provisioner can also be used to output attributes and store them in a file.
