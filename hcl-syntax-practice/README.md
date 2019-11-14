@@ -195,3 +195,39 @@ resource "aws_instance" "ubuntu-vm" {
   }
 }
 ```
+
+To remotely execute our copied script on the EC2 instance, we use `remote-exec` provisioner.
+
+```
+resorce "aws_key_pair" "deployer" {
+  key_name        = "deployer"
+  public_key      = var.PUBIC_SSH_KEY
+}
+
+resource "aws_instance" "ubuntu-vm" {
+  ami             = "ami-xxxx"
+  instance_type   = "t2.micro"
+  key_name        = aws_key_pair.deployer.id
+  tags            = {
+    Name          = "ubuntu-vm"
+  }
+  provisioner "file" {
+    source        = "./install_docker.sh"
+    destination   = "/home/ubuntu/install_docker.sh"
+  }
+  provisioner "remote-exec" {
+    inline        = [
+      "chmod +x /home/ubuntu/install_docker.sh",
+      "/home/ubuntu/install_docker.sh",
+    ]
+  }
+  connection {
+    type        = "ssh"
+    user        = var.INSTANCE_USERNAME
+    private_key = var.PATH_TO_PRIVATE_KEY
+    host        = aws_instance.ubuntu-vm.public_ip
+  }
+}
+```
+
+The connection is common for both provisioners. Previously, it was mentioned only for `file` provisioner. So, the script got copied but the `remote-exec` provisioner couldn't execute the script as it couldn't connect to the host. So, connection has to be defined either separately for each provisioner or at one place which is common for all provisioners (as in example above).
