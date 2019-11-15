@@ -46,6 +46,8 @@ Later, we destroyed the infra using `terraform destroy`.
 
 It is worth mentioning that the `terraform.tfstate` file is stored in `inder-terraform-state` bucket, under `udemy` path and as `ex_10` file. It has been renamed. However, when I destroyed the infrastructure, the `terraform.tfstate.backup` file should have got created but it didn't. Maybe because of verisoning. However, it needs to be investigated further. Yes, it is because of versioning. Now the `terraform.tfstate.backup` won't be created as the previous version is stored in S3 bucket as it is along with new version of `terraform.tfstate`. All versions can be viewed in S3.
 
+Later I deleted the S3 bucket also to avoid any mishap as it had public access.
+
 ## Terraform graph
 
 ![](./example.svg)
