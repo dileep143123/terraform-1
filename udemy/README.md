@@ -10,4 +10,6 @@ The different examples explained in Udemy course are documented here.
 * [ex_5](./ex_5/) : SSH keypairs for multiple EC2 instances
 * [ex_6](./ex_6/) : file upload
 * [ex_7](./ex_7/) : file upload with remote exec
-* [ex_8](./ex_8/) : outputting attributes
+* [ex_8](./ex_8/) : outputting attributes using output block
+* [ex_9](./ex_9/) : outputting attributes using output block as well as `local-exec` provisioner.
+* [ex_10](./ex_10/) : storing terraform remote state in S3 bucket.
