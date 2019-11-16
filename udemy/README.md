@@ -13,3 +13,4 @@ The different examples explained in Udemy course are documented here.
 * [ex_8](./ex_8/) : outputting attributes using output block
 * [ex_9](./ex_9/) : outputting attributes using output block as well as `local-exec` provisioner.
 * [ex_10](./ex_10/) : storing terraform remote state in S3 bucket.
+* [ex_11](./ex_11/) : creating custom VPC, public and private subnets in it, IGW, route tables and their associations with subnets, NAT gateway for one way communication of private subnets to internet.
