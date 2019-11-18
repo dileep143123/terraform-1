@@ -17,3 +17,4 @@ The different examples explained in Udemy course are documented here.
 * [ex_12](./ex_12/) : launching a single EC2 instance in public subnet 1a of above example. Basically, we're launching an EC2 instance in a custom subnet of a custom VPC.
 * [ex_13](./ex_13/) : launched one EC2 instance each in 4 subnets (2 public and 2 private) and experimented with it.
 * [ex_14](./ex_14/) : EBS volumes
+* [ex_15](./ex_15/) : userdata
