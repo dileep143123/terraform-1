@@ -16,3 +16,4 @@ The different examples explained in Udemy course are documented here.
 * [ex_11](./ex_11/) : creating custom VPC, public and private subnets in it, IGW, route tables and their associations with subnets, NAT gateway for one way communication of private subnets to internet.
 * [ex_12](./ex_12/) : launching a single EC2 instance in public subnet 1a of above example. Basically, we're launching an EC2 instance in a custom subnet of a custom VPC.
 * [ex_13](./ex_13/) : launched one EC2 instance each in 4 subnets (2 public and 2 private) and experimented with it.
+* [ex_14](./ex_14/) : EBS volumes
