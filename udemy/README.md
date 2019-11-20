@@ -20,3 +20,4 @@ The different examples explained in Udemy course are documented here.
 * [ex_15](./ex_15/) : userdata using a simple string and not a template
 * [ex_16](./ex_16/) : IAM users and groups and attaching policies to them
 * [ex_17](./ex_17/) : IAM role
+* [ex_18](./ex_18/) : Autoscaling 
